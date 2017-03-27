@@ -5,6 +5,7 @@ Fork this respository. Answer the questions to the best of your ability. Try to 
 Note: When you're done, submit a PR.
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
++ AR lets you interact with a SQL database from your models
 2. Assume you have the following model:
 
 ```ruby
@@ -13,8 +14,10 @@ end
 ```
 
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
++ the methods are inherited from the AR class. Create, new, save, find, where, limit are some of the methods that AR provides
 
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
++ find(4) and Owner.find(find(4).owner_id)
 
 4. Assume that you added a line to your `Team` class as follows:
 
@@ -25,11 +28,16 @@ end
 ```
 
 Now how would you find the owner of the team with an id of 4?
++ find(4).owner
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
++ The relationship is many to many
+
 6. Define foreign key, primary key, and schema.
++ primary key is the unique identifier for a table row. Foreign key is the primary key to a row in a different table. Schema is the 'road map' to how the DB is set up.
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
 8. What are the parts of an HTTP response?
++ determining the route, sending the request to the appropriate controller. The model does the things with the database. A page is rendered with information from the model and sent to the client
 
 
 ### Optional Questions
